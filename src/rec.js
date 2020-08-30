@@ -3,6 +3,7 @@ import ProgressBar from 'progressbar.js';
 import {recStart, recEnd, recRestart} from './recusage.js';
 
 var recLength = 0;
+var recInstr = "test123";
 var progressbar = new ProgressBar.Circle('#recprogress', {
     strokeWidth: 3,
     easing: 'linear',
@@ -40,6 +41,11 @@ export function progressStop() {
 
 export function setRecLength(l) {
     recLength = l;
+}
+
+export function setRecInstr(instr) {
+    $("#recinstr").text(instr);
+    //recInstr = instr;
 }
 
 function fillzero(num) {
