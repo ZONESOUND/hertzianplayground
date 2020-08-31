@@ -13,7 +13,7 @@ var viewstep = new viewStep('.step', 1, 2, {
 });
 var mode = -1;
 //TODO: 首頁的按鈕名稱在這裡換。
-const names = ['shaker', 'gyro', 'jazz', 'balance'];
+const names = ['shaker', 'gyro', 'conductor', 'balance'];
 
 initPage();
 
