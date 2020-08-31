@@ -66,24 +66,24 @@ function selectMode () {
         case '0': //shaker
             show('.recorduse');
             setRecLength(1000);
-            setRecInstr("record a short sound.");
-            $("#biginstr").text("SHAKE!");
+            setRecInstr("Create and capture a short sound");
+            $("#biginstr").text("SHAKE THE SOUND");
             recRestart();
             break;
         case '1': //gyro
             show('.recorduse');
             setRecLength(30000);
-            setRecInstr("record a long sound.");
-            $("#biginstr").text("gyro");
+            setRecInstr("Find and record a continuous sound");
+            $("#biginstr").text("MODULATE THE SOUND WITH MOTIONS");
             recRestart();
             break;
         case '2': //jazz
             hide('.recorduse');
-            $("#biginstr").text("jazz");
+            $("#biginstr").text("WAVE THE DEVICE TO DIRECT THE MUSIC");
             break;
         case '3': //silence
             hide('.recorduse');
-            $("#biginstr").text("silence");
+            $("#biginstr").text("KEEP BALANCE");
             break;
         default:
             break;
