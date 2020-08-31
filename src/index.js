@@ -5,6 +5,7 @@ import './rec.js';
 import {recRestart, recStart} from './recusage.js';
 import {progressStop, setRecLength, setRecInstr} from './rec.js';
 import {show, hide} from './cssusage';
+import arrow from './image.png';
 
 const images = importAll(require.context('./icons', false, /\.(png|jpe?g|svg)$/));
 var viewstep = new viewStep('.step', 1, 2, {
@@ -21,6 +22,7 @@ function importAll(r) {
 }
 
 function initPage() {
+    $('#previmg').attr("src", arrow);
     for (let i in images) {
         console.log(images[i].default);
         $('#selector').append(createBtn(`mode-${i}`, images[i].default, names[i]));

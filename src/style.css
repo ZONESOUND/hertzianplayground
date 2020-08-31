@@ -92,6 +92,10 @@ html, body {
     -webkit-text-stroke: 2px;
 }
 
+#previmg {
+    width: 15%;
+}
+
 #recback {
     background: #2e2e2e;
     animation: zoom 1s;
