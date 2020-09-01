@@ -5,6 +5,7 @@ import './rec.js';
 import {recRestart, recStart} from './recusage.js';
 import {progressStop, setRecLength, setRecInstr} from './rec.js';
 import {show, hide} from './cssusage';
+import arrow from './image.png';
 
 const images = importAll(require.context('./icons', false, /\.(png|jpe?g|svg)$/));
 var viewstep = new viewStep('.step', 1, 2, {
@@ -12,7 +13,7 @@ var viewstep = new viewStep('.step', 1, 2, {
 });
 var mode = -1;
 //TODO: 首頁的按鈕名稱在這裡換。
-const names = ['shaker', 'gyro', 'jazz', 'balance'];
+const names = ['shaker', 'gyro', 'conductor', 'balance'];
 
 initPage();
 
@@ -21,6 +22,7 @@ function importAll(r) {
 }
 
 function initPage() {
+    $('#previmg').attr("src", arrow);
     for (let i in images) {
         console.log(images[i].default);
         $('#selector').append(createBtn(`mode-${i}`, images[i].default, names[i]));
@@ -64,24 +66,24 @@ function selectMode () {
         case '0': //shaker
             show('.recorduse');
             setRecLength(1000);
-            setRecInstr("record a short sound.");
-            $("#biginstr").text("SHAKE!");
+            setRecInstr("Create and capture a short sound");
+            $("#biginstr").text("SHAKE THE SOUND");
             recRestart();
             break;
         case '1': //gyro
             show('.recorduse');
             setRecLength(30000);
-            setRecInstr("record a long sound.");
-            $("#biginstr").text("gyro");
+            setRecInstr("Find and record a continuous sound");
+            $("#biginstr").text("MODULATE THE SOUND WITH MOTIONS");
             recRestart();
             break;
         case '2': //jazz
             hide('.recorduse');
-            $("#biginstr").text("jazz");
+            $("#biginstr").text("WAVE THE DEVICE TO DIRECT THE MUSIC");
             break;
         case '3': //silence
             hide('.recorduse');
-            $("#biginstr").text("silence");
+            $("#biginstr").text("KEEP BALANCE");
             break;
         default:
             break;

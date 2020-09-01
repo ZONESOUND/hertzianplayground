@@ -4,6 +4,7 @@ html, body {
     text-align: center;
     color: white;
     background-color: black;
+    
 }
 
 .container {
@@ -78,6 +79,7 @@ html, body {
     position: absolute;
     bottom: 0px;
     height: 2.5em;
+    color: grey;
 }
 
 #loadOverlay {
@@ -92,10 +94,14 @@ html, body {
     -webkit-text-stroke: 2px;
 }
 
+#previmg {
+    width: 15%;
+}
+
 #recback {
     background: #2e2e2e;
-    animation: zoom 1s;
-    -moz-animation: zoom 1s;
+    animation: zoomB 1s;
+    -moz-animation: zoomB 1s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
     -moz-animation-iteration-count: infinite;
@@ -143,7 +149,9 @@ html, body {
 }
 
 #biginstr {
+    padding: 20px;
     font-size: 2em;
+    line-height: 3rem;
 }
 
 .center {
@@ -199,6 +207,8 @@ html, body {
     position: absolute;
     width: calc(100% - 30px); /*30px from .container*/
     bottom: 20%;
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 .shown {
@@ -213,6 +223,17 @@ html, body {
 
 .overlay {
     animation: fadeIn 1.5s;
+}
+
+@keyframes zoomB {
+    from {
+      width: 45%;
+      padding-bottom: 45%;
+    }
+    to {
+        width: 55%;
+        padding-bottom: 55%;
+    }
 }
 
 
@@ -268,7 +289,18 @@ html, body {
     }
 }
 
-@-moz-keyframes zoom {
+@-moz-keyframes zoomB {
+    from {
+      width: 45%;
+      padding-bottom: 45%;
+    }
+    to {
+        width: 55%;
+        padding-bottom: 55%;
+    }
+}
+
+@-moz-keyframes zoomOut {
     from {
       width: 55%;
       padding-bottom: 55%;
@@ -278,6 +310,7 @@ html, body {
         padding-bottom: 45%;
     }
 }
+
 
 @-moz-keyframes fadeIn {
     from {
